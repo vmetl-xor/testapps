@@ -15,7 +15,7 @@ import java.util.Map;
  */
 public class WordCounter {
 
-    private static final String WORDS_DELIMITER = "(?: |, )"; // regex describes 'space or comma followed by space'
+    private static final String WORDS_DELIMITER = "(, | )"; // regex describes 'space or comma followed by space'
     private final Map<String, Integer> wordsCount;
     private final String fileName;
 

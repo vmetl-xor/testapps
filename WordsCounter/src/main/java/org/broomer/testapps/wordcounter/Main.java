@@ -10,7 +10,9 @@ import java.util.Map;
 public class Main {
 
     public static void main(String[] args) {
-        if (!checkArguments(args)) return;
+        if (!checkArguments(args)) {
+            return;
+        }
 
         WordCounter wordCounter = new WordCounter(args[0]);
         Map<String, Integer> mostFrequentWords =

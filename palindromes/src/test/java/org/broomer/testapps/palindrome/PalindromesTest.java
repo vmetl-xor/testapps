@@ -13,6 +13,7 @@ public class PalindromesTest {
         Assert.assertTrue("The given string is a palindrome", Palindromes.isPalindrome("aaccaa"));
         Assert.assertTrue("The given string is a palindrome", Palindromes.isPalindrome("1"));
         Assert.assertTrue("The given string is a palindrome", Palindromes.isPalindrome(""));
+        Assert.assertTrue("The given string is a palindrome", Palindromes.isPalindrome("船上女子叫子女上船"));
     }
 
     @Test
