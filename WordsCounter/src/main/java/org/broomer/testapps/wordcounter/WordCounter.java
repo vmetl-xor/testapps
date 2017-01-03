@@ -49,10 +49,14 @@ public class WordCounter {
     /**
      * count and get N most frequently used words
      *
-     * @param topAmount - number of most frequent words
+     * @param topAmount - number of most frequent words, must be positive integer greater than zero
      * @return an ordered map, with most frequent words in descending order
      */
     public Map<String, Integer> getMostFrequentWords(int topAmount) {
+        if (topAmount <= 0) {
+            throw new IllegalArgumentException("Incorrect number of top frequent words");
+        }
+
         if (wordsCount.isEmpty()) {
             countWords();
         }

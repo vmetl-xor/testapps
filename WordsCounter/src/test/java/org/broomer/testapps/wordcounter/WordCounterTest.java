@@ -52,6 +52,15 @@ public class WordCounterTest {
     }
 
     @Test
+    public void testReadWithINcorrectTopNumber() throws Exception {
+        expectedEx.expect(IllegalArgumentException.class);
+        expectedEx.expectMessage("Incorrect number of top frequent words");
+
+        WordCounter wordCounter = new WordCounter(testFileName);
+        wordCounter.getMostFrequentWords(-1);
+    }
+
+    @Test
     public void testReadFromEmptyFile() throws Exception {
         WordCounter wordCounter = new WordCounter(emptyFileName);
         Map<String, Integer> mostFrequentWords = wordCounter.getMostFrequentWords(2);
