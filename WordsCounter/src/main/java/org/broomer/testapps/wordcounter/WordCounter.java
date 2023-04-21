@@ -34,7 +34,7 @@ public class WordCounter {
                             String wordLoweCase = word.toLowerCase();
                             Integer existingCount = wordsCount.get(wordLoweCase);
                             Integer updatedCount = existingCount == null ? 1 : existingCount + 1;
-                            wordsCount.put(wordLoweCase, updatedCount);
+                            wordsCount.put(wordLoweCase, updatedCount); // todo use collectors here instead of side-var
                         });
             }
 
@@ -65,7 +65,7 @@ public class WordCounter {
         wordsCount.entrySet().stream().
                 sorted((w1, w2) -> Integer.compare(w2.getValue(), w1.getValue())).
                 limit(topAmount).
-                forEach(wordEntry -> mostFrequentWords.put(wordEntry.getKey(), wordEntry.getValue()));
+                forEach(wordEntry -> mostFrequentWords.put(wordEntry.getKey(), wordEntry.getValue())); // todo use collectors here instead of side-var
 
         return mostFrequentWords;
     }
